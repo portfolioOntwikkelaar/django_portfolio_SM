@@ -2,7 +2,19 @@
 
 {% block content %}
 
+{{page}}
+
+{% if number > 26 %}
+
+<p>Number is greater than 26</p>
+{% elif number ==  26 %}
+<p>Number is exactly 26</p>
+
+{% else %}
+<p>Number is less than 26</p>
+{% endif %}
+<hr>
 <h1>Projects Template</h1>
-<p>Lo-fi photo booth vinyl fam dreamcatcher messenger bag cardigan. Fingerstache try-hard shoreditch, migas succulents distillery pop-up echo park vegan. Cornhole truffaut kitsch cray VHS 90's. Semiotics yuccie selvage literally, salvia offal lo-fi ethical lomo knausgaard scenester twee. Occupy drinking vinegar beard.</p>
+
 
 {% endblock content %}
