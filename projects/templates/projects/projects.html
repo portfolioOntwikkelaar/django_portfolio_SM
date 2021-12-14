@@ -14,7 +14,12 @@
 <p>Number is less than 26</p>
 {% endif %}
 <hr>
-<h1>Projects Template</h1>
-
+<h1>Lijst met de benamingen</h1>
+<ul>
+  {% for project in projects %}
+  <li>Title:<a href="{% url 'project' project.id %}">{{project.title}} </a>--- {{project.description}}</li>
+  {% endfor %}
+</ul>
+<!-- <a href="/project/{{project.id}}">{{project.title}} </a> -->
 
 {% endblock content %}
