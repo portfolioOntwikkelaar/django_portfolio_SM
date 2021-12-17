@@ -2,24 +2,31 @@
 
 {% block content %}
 
-{{page}}
 
-{% if number > 26 %}
-
-<p>Number is greater than 26</p>
-{% elif number ==  26 %}
-<p>Number is exactly 26</p>
-
-{% else %}
-<p>Number is less than 26</p>
-{% endif %}
-<hr>
 <h1>Lijst met de benamingen</h1>
-<ul>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Project</th>
+    <th>Positive Votes</th>
+    <th> Votes</th>
+
+    <th></th>
+  </tr>
   {% for project in projects %}
-  <li>Title:<a href="{% url 'project' project.id %}">{{project.title}} </a>--- {{project.description}}</li>
+    <tr>
+      <td>{{project.id}}</td>
+      <td>{{project.title}}</td>
+      <td>{{project.vote_ratio}}%</td>
+      <td>{{project.vote_total}}</td>
+      <td>{{project.created}}</td>
+      <td><a href="{% url 'project' project.id %}">View</a></td>
+    </tr>
   {% endfor %}
-</ul>
+</table>
+
+
 <!-- <a href="/project/{{project.id}}">{{project.title}} </a> -->
 
 {% endblock content %}
